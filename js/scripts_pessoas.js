@@ -1,3 +1,6 @@
+//IMPORTANDO ARQUIVOS
+import {calcDesconto} from "./scripts_calculos.js";
+
 //PEGANDO ELEMENTOS DO DOM
 const formPessoa= document.querySelector('#form-pessoa')
 const divLista = document.querySelector('#div-lista-pessoas')
@@ -22,17 +25,13 @@ formPessoa.addEventListener('submit', (evt) => {
 
     //CHAMANDO FUNÇÃO addPessoa E PASSANDO O OBJETO LITERAL pessoa
     addPessoa(pessoa)
-    
-    //LIMPAR O FORMULÁRIO 
-    formPessoa.reset()
 
+    //LIMPAR O FORMULÁRIO
+    formPessoa.reset()
 })
 
 //CRIANDO A FUNÇÃO ADICIONAR PESSOA
 const addPessoa = (objPessoa) => {
-    //LIMPANDO A DIV LISTA
-    divLista.innerHTML = ''
-
     //ADICIONANDO O OBJETO LITERAL NO ARRAY PESSOAS
     pessoas.push(objPessoa)
 
@@ -42,9 +41,11 @@ const addPessoa = (objPessoa) => {
 
 //FUNÇÂO PARA LISTAR PESSOAS DO ARRAY
 const listPessoas = () => {
+    //LIMPANDO A DIV LISTA
+    divLista.innerHTML = ''
+
     //PERCORRER O ARRAY pessoas COM O forEach
     pessoas.forEach((elem, i) => {
-        divLista.innerHTML += `${i} - ${elem.nome} - ${elem.idade} idade, ${parseFloat(elem.renda).toFixed(2), replace('.',',')}`
+     divLista.innerHTML += ` ${i+1} - ${elem.nome} - ${elem.idade}, ${parseFloat(elem.renda).toFixed(2).replace('.',',')} ${calcDesconto(elem)}<br>`
     })
-
 }
