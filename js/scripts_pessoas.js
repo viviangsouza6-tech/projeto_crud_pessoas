@@ -22,11 +22,17 @@ formPessoa.addEventListener('submit', (evt) => {
 
     //CHAMANDO FUNÇÃO addPessoa E PASSANDO O OBJETO LITERAL pessoa
     addPessoa(pessoa)
+    
+    //LIMPAR O FORMULÁRIO 
+    formPessoa.reset()
 
 })
 
 //CRIANDO A FUNÇÃO ADICIONAR PESSOA
 const addPessoa = (objPessoa) => {
+    //LIMPANDO A DIV LISTA
+    divLista.innerHTML = ''
+    
     //ADICIONANDO O OBJETO LITERAL NO ARRAY PESSOAS
     pessoas.push(objPessoa)
 
