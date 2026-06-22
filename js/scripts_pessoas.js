@@ -32,7 +32,7 @@ formPessoa.addEventListener('submit', (evt) => {
 const addPessoa = (objPessoa) => {
     //LIMPANDO A DIV LISTA
     divLista.innerHTML = ''
-    
+
     //ADICIONANDO O OBJETO LITERAL NO ARRAY PESSOAS
     pessoas.push(objPessoa)
 
@@ -44,7 +44,7 @@ const addPessoa = (objPessoa) => {
 const listPessoas = () => {
     //PERCORRER O ARRAY pessoas COM O forEach
     pessoas.forEach((elem, i) => {
-        divLista.innerHTML += `${i} - ${elem.nome} - ${elem.idade} - ${elem.renda} <br>`
+        divLista.innerHTML += `${i} - ${elem.nome} - ${elem.idade} idade, ${parseFloat(elem.renda).toFixed(2), replace('.',',')}`
     })
 
 }
