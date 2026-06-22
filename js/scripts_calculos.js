@@ -3,15 +3,15 @@ const calcDesconto = (objPessoa) => {
     let resultCalc = ''
 
     if((objPessoa.idade < 18) || (objPessoa.renda <= 1700)){
-        resultCalc = 'Isento de descontos'
-    }else if (objPessoa.renda <= 5000){
-        resultCalc = objPessoa.renda * 0.05
+        resultCalc = 'Isento de desconto'
+    }else if(objPessoa.renda <= 5000){
+        resultCalc = `R$ ${parseFloat(objPessoa.renda * 0.05).toFixed(2).replace('.',',')}`
     }else if(objPessoa.renda <= 8000){
-        resultCalc = objPessoa.renda * 0.10
-    }else if (objPessoa.renda <= 12000){
-        resultCalc = objPessoa.renda * 0.15
+        resultCalc = `R$ ${parseFloat(objPessoa.renda * 0.10).toFixed(2).replace('.',',')}`
+    }else if(objPessoa.renda <= 12000){
+        resultCalc = `R$ ${parseFloat(objPessoa.renda * 0.15).toFixed(2).replace('.',',')}`
     }else{
-        resultCalc = objPessoa.renda * 0.20
+        resultCalc = `R$ ${parseFloat(objPessoa.renda * 0.20).toFixed(2).replace('.',',')}`
     }
 
     return resultCalc
